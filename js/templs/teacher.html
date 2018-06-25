@@ -1,0 +1,32 @@
+<!-- Team Section -->
+<section class="team-section teacher-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 text-center">
+                <h2 class="title">Meet Our Staffs</h2>
+                <p class="subtitle color">
+                    Best Skilled Teacher
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <%_.each(teachers, function(teacher) {%>
+                <div class="col-sm-6 col-md-3 col-xs-12 text-center">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <img alt="" src="<%=teacher.avatar%>">
+                            <ul class="team-social">
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <h3><%=teacher.name %></h3>
+                        <p><%=teacher.position %></p>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+    </div>
+</section>

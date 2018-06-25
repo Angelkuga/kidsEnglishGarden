@@ -1,0 +1,33 @@
+<div class="index">
+    <!-- Classes Section -->
+    <section class="classes-section-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12 kinder play">
+                    <% _.each(lessons, function(item) {%>
+                        <a href="<%=item.videoSrc%>">
+                            <div class="single-class">
+                                <div class="class-img">
+                                    <img alt="" src="<%=item.imgSrc%>">
+                                </div>
+                                <div class="class-details">
+                                    <h3><%=item.name%></h3>
+                                    <div class="clearfix">
+                                        <div class="class-meta pull-left">
+                                            <span>Years Old</span>
+                                            <p><%=item.ageRange%></p>
+                                        </div>
+                                        <div class="class-meta pull-left">
+                                            <span>Class Size</span>
+                                            <p>1-3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
