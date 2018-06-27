@@ -19,10 +19,8 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templs/teacher.html'], f
     className: 'main',
     model: teacherData,
     initialize: function() {
-      this.render();
     },
     events: {
-
     },
     render: function() {
       var data = this.model.get('source');

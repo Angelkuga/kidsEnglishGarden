@@ -41,22 +41,22 @@
                     <div class="row">
                         <div class="col-sm-12 col-xs-12">
                             <div class="logo pull-left">
-                                <a href="home.html"><img alt="Kidzy" src="../../asset/images/home1/logo.png"></a>
+                                <a class="cus-nav" data-nav="home"><img alt="Kidzy" src="../../asset/images/home1/logo.png"></a>
+                                </a>
                             </div>
                             <ul class="main-menu pull-right">
                                 <li class="menu-has-child">
-                                    <a href="home.html">Home</a>
+                                    <a class="cus-nav" data-nav="home">Home</a>
                                     <ul>
                                         <li><a href="index2.html">Home 2</a></li>
                                         <li><a href="index3.html">Home 3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">About us</a></li>
                                 <li class="menu-has-child">
-                                    <a href="class.html">Classes</a>
-                                    <ul>
-                                        <li><a href="#">Classes Details</a></li>
-                                    </ul>
+                                    <a class="cus-nav" data-nav="teacher">Teacher</a>
+                                </li>
+                                <li>
+                                    <a class="cus-nav" data-nav="about">About us</a>
                                 </li>
                                 <li>
                                     <a href="#" id="search-pop"><i class="fa fa-search"></i></a>
@@ -94,8 +94,16 @@
                  }
             };
             require.config(config);
-            require(['../js/controllers/{{js}}'], function(Index) {
-                var view = new Index();
+
+            require(['backbone', 'underscore', '../js/router'], function(Backbone, _, router){
+                //开始监控url变化
+                Backbone.history.start({pushState: true});
+
+                // 导航跳转
+                $('.cus-nav').click(function() {
+                    var navPath = $(this).data('nav');
+                    router.navigate('page/' + navPath,  {trigger: true});
+                });
             });
         </script>
     </body>

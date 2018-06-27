@@ -21,7 +21,6 @@ define(['jquery', 'underscore', 'backbone', 'text!../../templs/home.html'], func
     className: 'main',
     model: homeData,
     initialize: function() {
-      this.render();
     },
     events: {
 
